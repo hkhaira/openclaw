@@ -44436,6 +44436,26 @@
       "hasChildren": false
     },
     {
+      "path": "memory.qmd.postSearchCommand",
+      "kind": "core",
+      "type": "string",
+      "required": false,
+      "deprecated": false,
+      "sensitive": false,
+      "tags": [],
+      "hasChildren": false
+    },
+    {
+      "path": "memory.qmd.postSearchTimeoutMs",
+      "kind": "core",
+      "type": "integer",
+      "required": false,
+      "deprecated": false,
+      "sensitive": false,
+      "tags": [],
+      "hasChildren": false
+    },
+    {
       "path": "memory.qmd.scope",
       "kind": "core",
       "type": "object",

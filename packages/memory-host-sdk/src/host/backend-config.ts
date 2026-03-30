@@ -70,6 +70,8 @@ export type ResolvedQmdConfig = {
   limits: ResolvedQmdLimitsConfig;
   includeDefaultMemory: boolean;
   scope?: SessionSendPolicyConfig;
+  postSearchCommand?: string;
+  postSearchTimeoutMs: number;
 };
 
 const DEFAULT_BACKEND: MemoryBackend = "builtin";
@@ -419,6 +421,8 @@ export function resolveMemoryBackendConfig(params: {
     },
     limits: resolveLimits(qmdCfg?.limits),
     scope: qmdCfg?.scope ?? DEFAULT_QMD_SCOPE,
+    postSearchCommand: qmdCfg?.postSearchCommand?.trim() || undefined,
+    postSearchTimeoutMs: Math.max(qmdCfg?.postSearchTimeoutMs ?? 10_000, 1),
   };
 
   return {
